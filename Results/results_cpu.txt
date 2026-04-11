@@ -1,0 +1,19 @@
+SIZE (Nx x Ny)  RESOLUTION    CPU_TIME(s)        KINETIC_E
+200x100        20604          0.3914         7748.7024      
+800x400        322404         1.4928         140178.3582    
+1600x800       1284804        6.2445         597673.8382    
+3200x1600      5129604        44.5721        2455631.8348  
+
+
+
+
+
+
+Simulation results have been provided separately for CPU and GPU. It is evident from the simulation results
+that the kinetic energy is the same in both implementations, thus verifying the algorithmic approach.
+In case of lower resolution grids (200 x 100), CPU and GPU performances are similar since there is less room
+for data-level parallelism and GPU overhead is quite prominent in such cases.
+However, with increasing grid size, the GPU becomes significantly more efficient by exploiting data parallelism.
+At the largest resolution (3200×1600), the GPU achieves approximately a 24× speedup compared to the CPU.
+Overall, the results highlight that GPU acceleration is most effective for larger,
+compute-intensive problems while maintaining numerical accuracy.
